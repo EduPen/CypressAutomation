@@ -1,0 +1,19 @@
+/// <reference types="Cypress" />
+
+ddescribe('Hooks', () => {
+    before(() => {
+        
+    })
+  
+    beforeEach(() => {
+        cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
+    })
+  
+    afterEach(() => {
+      // runs after each test in the block
+    })
+  
+    after(() => {
+      // runs once after all tests in the block
+    })
+  })
