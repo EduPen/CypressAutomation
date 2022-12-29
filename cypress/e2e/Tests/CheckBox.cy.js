@@ -3,6 +3,10 @@
 describe('Type of Web elements Handling ', function()   
 {
 
+    beforeEach(() => {
+        cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
+    })
+    
     it('CheckBox handling', function(){  
         cy.get('#checkBoxOption1').check()
                                   .should('be.checked')

@@ -3,6 +3,10 @@
 describe('Tables', function()   
 {
 
+    beforeEach(() => {
+        cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
+    })
+    
     it('Table Handling', function(){  
         cy.get('tr td:nth-child(2)').each(($e1, index, $list) => {  //burada table liste olarak alindi
             const text = $e1.text()             

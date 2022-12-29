@@ -5,6 +5,9 @@ import 'cypress-iframe'  //burada Iframe kullanmak icin npm install -D cypress-i
 
 describe('Tabs window', function()   
 {
+    beforeEach(() => {
+        cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
+    })
 
     it('Tab handling', function(){  
         cy.get('#opentab').invoke('removeAttr', 'target').click() // burada child tab acmadi yan yeni browser acmadi ayni browserda devam etti
