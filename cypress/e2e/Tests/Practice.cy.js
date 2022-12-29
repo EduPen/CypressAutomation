@@ -15,7 +15,7 @@ describe('My First test Suit', function()
     })
 
     beforeEach(() => {
-        cy.visit('https://rahulshettyacademy.com/angularpractice/')
+        cy.visit(Cypress.env('angularPracticeUrl'))
     })
 
     it('fill up form with fixture file', function(){   
@@ -33,6 +33,25 @@ describe('My First test Suit', function()
 
         productPage.checkOutButton().click()
 
+        
+        var sum = 0
+        cy.get('tr td:nth-child(4) strong').each(($el, index, $list) =>{  //burada tablodaki iki degeri aldik fiyat olarak
+            const amount = $el.text()   // variable olarak kaydeddik herbirini
+            var actualSplited = amount.split(" ")  // her birini bosluk ile splitt ettik ayani array yaptik
+            actualSplited = actualSplited[1].trim()   // zaten iki deger var ikincisi uzerinden split yaptik
+            sum = sum + Number(actualSplited)  // burada stringdeki sayinin numra oldugunu  belirtmek icin basina Number koyduk
+        }).then(function(){  // bunu koydukki paranteez ici bittikten sonra sonucu disarda verisn
+            cy.log(sum) // degerleri print ettik
+        })
+
+        cy.get('h3 strong').then(function(element){ // burada da tatal emauntu aldik 
+            const amount =element.text()   
+            var actualSplited = amount.split(" ") 
+            var total = actualSplited[1].trim()
+            expect(Number(total)).to.equal(sum) // ve burada da varification yaptik
+        })
+
+
         cy.contains('Checkout').click()
 
         cy.get('#country').type('India')
@@ -45,6 +64,7 @@ describe('My First test Suit', function()
 
         cy.get('.alert').then(function(element){    //burada yaziyi aliyorurz ve veryf ediyoruz
             const actualText = element.text()
+          
             expect(actualText.includes("Success")).to.be.true
         })
         

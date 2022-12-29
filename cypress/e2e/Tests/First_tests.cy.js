@@ -4,7 +4,7 @@ describe('My First test Suit', function()    // bu seleniumdaki feature gibi
 {
     it('My FirstTest case', function(){   //burasida her bir scenario yada scenario outline gibi
 
-        cy.visit("https://rahulshettyacademy.com/seleniumPractise/#/")
+        cy.visit(Cypress.env('seleniumPractiseUrl'))
 
         cy.get('.search-keyword').type('ca')      // sadece css sellector kabul ediliyor
 
@@ -39,7 +39,7 @@ describe('My First test Suit', function()    // bu seleniumdaki feature gibi
 
     it('Verification for each ile', function(){   //burasida her bir scenario yada scenario outline gibi
 
-        cy.visit("https://rahulshettyacademy.com/seleniumPractise/#/")
+        cy.visit(Cypress.env('seleniumPractiseUrl'))
         cy.get('.search-keyword').type('ca')      // sadece css sellector kabul ediliyor
         cy.get('.products').as('productLocator') // burada locatoru su isimle kaydet ve reuse diyoruz
         cy.get('@productLocator').find('.product').each(($e1, index, $list) => { //burada liste haline getirdik UI den gelen elementleri for each gibi
