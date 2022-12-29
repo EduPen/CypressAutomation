@@ -4,7 +4,7 @@ describe('Tables', function()
 {
 
     beforeEach(() => {
-        cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
+        cy.visit(Cypress.env('automationPracticeUrl'))
     })
     
     it('Table Handling', function(){  
