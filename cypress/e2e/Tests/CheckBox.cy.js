@@ -4,7 +4,7 @@ describe('Type of Web elements Handling ', function()
 {
 
     beforeEach(() => {
-        cy.visit(Cypress.env('automationPracticeUrl'))
+        cy.visit(Cypress.env('baseUrl') + "/AutomationPractice/") 
     })
     
     it('CheckBox handling', function(){  

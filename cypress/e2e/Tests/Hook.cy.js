@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-ddescribe('Hooks', () => {
+describe('Hooks', () => {
     before(() => {
          // runs once  befor all tests
         

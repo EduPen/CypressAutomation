@@ -6,11 +6,9 @@ module.exports = defineConfig({
   pageLoadTimeout: 30000,
   env:
   {
-    "automationPracticeUrl": "https://rahulshettyacademy.com/AutomationPractice/",
-    "angularPracticeUrl": "https://rahulshettyacademy.com/angularpractice/",
-    "seleniumPractiseUrl": "https://rahulshettyacademy.com/seleniumPractise/#/"
+    "baseUrl": "https://rahulshettyacademy.com"
   },
-
+  reporter : "mochawesome",
   projectId: 'du4muy',
   e2e: {
     setupNodeEvents(on, config) {

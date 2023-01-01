@@ -6,7 +6,7 @@ import 'cypress-iframe'  //burada Iframe kullanmak icin npm install -D cypress-i
 describe('Tabs window', function()   
 {
     beforeEach(() => {
-        cy.visit(Cypress.env('automationPracticeUrl'))
+         cy.visit(Cypress.env('baseUrl') + "/AutomationPractice/") 
     })
 
     it('Tab handling', function(){  

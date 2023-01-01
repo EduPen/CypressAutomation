@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
 
-import HomePage from "../PageObjects/HomePage.cy"
-import ProductPage from "../PageObjects/ProductPage.cy"
+import HomePage from "../../support/PageObjects/HomePage.cy"
+import ProductPage from "../../support/PageObjects/ProductPage.cy"
 
 describe('My First test Suit', function() 
 {
@@ -15,7 +15,7 @@ describe('My First test Suit', function()
     })
 
     beforeEach(() => {
-        cy.visit(Cypress.env('angularPracticeUrl'))
+        cy.visit(Cypress.env('baseUrl') + "/angularpractice/") 
     })
 
     it('fill up form with fixture file', function(){   
