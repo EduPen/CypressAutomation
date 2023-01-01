@@ -9,3 +9,4 @@
 //     npm install --save-dev mocha
 //  add this in config file : reporter : "mochawesome",
 //     cypress run --reporter mochawesome  yada sadece istenilen node_modules/.bin/cypress run  --reporter mochawesome --spec cypress/e2e/Tests/Table.cy.js
+// npx cypress-tags run -e TAGS= "@Login"  tagb ile calistrma

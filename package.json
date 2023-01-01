@@ -6,14 +6,29 @@
   "scripts": {
     "test": "node_modules/.bin/cypress run",
     "headTest": "npm run test -- --headed",
-    "chromeTest":"npm run test -- --browser chrome"
+    "chromeTest": "npm run test -- --browser chrome",
+    "recordDashBoardTest": "npm run test -- --record --key 8e18b479-8284-46ab-b1ed-6db60d4bc830 --reporter mochawesome",
+    "myTests": "npm run test -- --spec \"cypress/e2e/Tests/*\""
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false,
+    "commonPath": "cypress/integration/step_definitions/common",
+    "stepDefinitions": "cypress/e2e/Tests/BDD/*stepDefinitions",
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^11.1.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
     "cypress-iframe": "^1.0.1",
     "mocha": "^10.2.0",
-    "mochawesome": "^7.1.3"
+    "mochawesome": "^7.1.3",
+    "multiple-cucumber-html-reporter": "^3.0.2"
   }
 }

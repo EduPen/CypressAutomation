@@ -1,0 +1,7 @@
+node_modules
+cypress/videos
+cypress/downloads
+cypress/screenshots
+mochawosome-report/
+reports/
+
