@@ -23,5 +23,5 @@ module.exports = defineConfig({
       on('file:preprocessor', cucumber())
     },
     //specPattern:'cypress/e2e/Tests/BDD/features/*.feature'
-  },
+  }
 })
