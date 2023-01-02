@@ -7,6 +7,16 @@ Cypress.Commands.add("selectProduct", (productName) => {
         }
     })
 })
+
+Cypress.Commands.add("LoginAPI", () => {
+    cy.request("POST", 
+               "https://rehulshettyacademy.com/api/ecom/quth/login", 
+               {"userEmail":"rahulshetty@gmal.com", "userPassword":"Iamking@00"
+            }).then(function(response){
+                expect(response.status).to.eq(200)
+                Cypress.env('token' , response.body.token)
+            })
+})
  
 //
 //
