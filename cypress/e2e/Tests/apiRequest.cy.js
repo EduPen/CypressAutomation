@@ -7,7 +7,7 @@ describe('Api request', function(){
               "name": "Zetki",
               "isbn": "zertkdo",
               "aisle": "172eh",
-              "author": " Jhon foe"
+              "author": "Jhon foe"
         }).then(function(response){
             expect(response.body).to.have.property("Msg", "successfully added")
             expect(response.status).to.eq(200)
