@@ -10,3 +10,14 @@
 //  add this in config file : reporter : "mochawesome",
 //     cypress run --reporter mochawesome  yada sadece istenilen node_modules/.bin/cypress run  --reporter mochawesome --spec cypress/e2e/Tests/Table.cy.js
 // npx cypress-tags run -e TAGS= "@Login"  tagb ile calistrma
+
+"csv kullanabilmek icin"
+// https://www.npmjs.com/package/neat-csv  
+
+"sql integration"
+//https://www.npmjs.com/package/cypress-sql-server
+
+//fixture -> handle test data
+//e2e -> all teh test are here
+//support -> customased commend methods , no need import , tst directly get 
+// cypress.config -> configuration file
