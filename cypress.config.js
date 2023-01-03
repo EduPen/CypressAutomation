@@ -1,5 +1,6 @@
 const { defineConfig } = require("cypress");
 const cucumber = require('cypress-cucumber-preprocessor').default
+const sqlServer = require('cypress-sql-server')
 
 module.exports = defineConfig({
   defaultCommandTimeout: 8000,
@@ -21,6 +22,8 @@ module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
       on('file:preprocessor', cucumber())
+      tasks = sqlServer.loadDBPlugin(config.db)
+      on('task', tasks)
     },
     //specPattern:'cypress/e2e/Tests/BDD/features/*.feature'
   }
