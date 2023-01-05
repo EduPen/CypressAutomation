@@ -2,12 +2,12 @@
 
 describe('Hooks', () => {
     before(() => {
-         // runs once  befor all tests
-        
+        // runs once  befor all tests
+
     })
-  
-   
+
+
     after(() => {
-      // runs once after all tests in the block
+        // runs once after all tests in the block
     })
-  })
+})

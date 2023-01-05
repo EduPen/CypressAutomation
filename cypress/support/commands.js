@@ -17,6 +17,25 @@ Cypress.Commands.add("LoginAPI", () => {
                 Cypress.env('token' , response.body.token)
             })
 })
+
+Cypress.Commands.add("PEGA_returns_to_NBA", () => {
+    cy.request('POST', 'https://kinltd-eurodc-stg1.pega.net/prweb/api/PegaMKTContainer/V3/Container', {
+        "SubjectID": "137480004",
+        "ContainerName": "NBA",
+        "ContextName": "Customer",
+        "Channel": "Web",
+        "Direction": "Inbound",
+        "Placements": "",
+        "Contexts": [{
+            "Type": "",
+            "Value": "casino",
+            "Key": "path"
+        }],
+    }).then(function (response) {
+        expect(response.body).to.have.property("SubjectID", "137480004")
+        expect(response.status).to.eq(200)
+    })
+})
  
 //
 //
